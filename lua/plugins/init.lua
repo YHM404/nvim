@@ -40,6 +40,12 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- fuzzy search
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
   -- theme
   use { "ellisonleao/gruvbox.nvim" }
 end)
