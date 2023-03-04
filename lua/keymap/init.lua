@@ -6,7 +6,7 @@ local keymap_opts = { buffer = buffer }
 vim.keymap.set("n", "g[", vim.diagnostic.goto_prev, keymap_opts)
 vim.keymap.set("n", "g]", vim.diagnostic.goto_next, keymap_opts)
 
-require('keymap/lsp')
+require('keymap/coc')
 require('keymap/rust')
 require('keymap/hop')
 require('keymap/telescope')

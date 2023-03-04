@@ -2,11 +2,12 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use { 'neoclide/coc.nvim', branch='release' }
+
   use 'neovim/nvim-lspconfig'
 
   -- let's get Rusty!!!!
   use 'simrat39/rust-tools.nvim'
-  use 'rust-lang/rust.vim'
   require('plugins/rust')
 
   -- Completion framework:
@@ -35,8 +36,7 @@ return require('packer').startup(function(use)
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
     config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   }
 
