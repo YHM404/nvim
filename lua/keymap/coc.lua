@@ -16,7 +16,7 @@ keyset("n", "<C-a>", "<Plug>(coc-codeaction-selected)<CR>", opts)
 local opts = {silent = true, noremap = flase, expr = true, replace_keycodes = true}
 keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
 keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
-keyset("i", "<C-CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+keyset("i", "<S-CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
 -- Use K to show documentation in preview window
 function _G.show_docs()
