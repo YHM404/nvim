@@ -2,6 +2,12 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
+  -- coc
   use { 'neoclide/coc.nvim', branch='release' }
 
   -- treesitter
@@ -9,7 +15,6 @@ return require('packer').startup(function(use)
 
   -- airline
   use 'vim-airline/vim-airline'
-
   use 'vim-airline/vim-airline-themes'
 
   -- hop: easymotion replacement

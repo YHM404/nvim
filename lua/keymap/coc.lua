@@ -9,6 +9,15 @@ keyset("n", "<leader>r", "<Plug>(coc-rename)", {silent = true})
 keyset("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 keyset("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 
+local opts = {silent = true, nowait = true}
+keyset("x", "<C-a>", "<Plug>(coc-codeaction-selected)<CR>", opts)
+keyset("n", "<C-a>", "<Plug>(coc-codeaction-selected)<CR>", opts)
+
+local opts = {silent = true, noremap = flase, expr = true, replace_keycodes = true}
+keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
+keyset("i", "<C-CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+
 -- Use K to show documentation in preview window
 function _G.show_docs()
     local cw = vim.fn.expand('<cword>')
